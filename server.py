@@ -6,6 +6,7 @@ app.Debug=True
 @app.route('/')
 def index():
 	source="https://api.coinsecure.in/v0/noauth/ticker"
+	print('Yo')
 	resp=requests.get(url=source)
 	data=json.loads(resp.text)
 	highest_bid=data['result'][4]['highestBid']
@@ -66,4 +67,4 @@ def paylol():
 
 
 if __name__ == '__main__':
-    app.run(host='127.0.0.1',port=12345)
+    app.run()
